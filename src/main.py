@@ -49,8 +49,8 @@ def main():
 ########### Test2 ##############
     print("test field data")
     args.test_only = True
-    args.save_dir_suffix = 'field_gunsan'
-    args.data_range = '1-1600/1-2'
+    args.save_dir_suffix = 'field'
+    args.data_range = '1-1600/1-3'
     args.dir_lr = '/home/jbgpl/Downloads/SR_denoising/SeismicSuperResolution/data/field'
     args.apply_field_data = True
     args.pre_train = '/home/jbgpl/Downloads/SR_denoising/SeismicSuperResolution/experiment/ESRT_paper/model/model_best.pt'
