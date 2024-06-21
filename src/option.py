@@ -41,10 +41,10 @@ parser.add_argument('--resume', type=int, default=0,
 parser.add_argument('--apply_field_data', type=bool, default=False)
 parser.add_argument('--dir_data_root', type=str, default='../data/',
                     help='root directory of dataset')
-parser.add_argument('--dir_lr', type=str, default='nx2_paper',
+parser.add_argument('--dir_lr', type=str, default='nx2',
                     help='if synthetic data, like this: dir_data_root/dir_lr.   '+
                     'if field data, dir_lr is the absolute path of field data.')
-parser.add_argument('--dir_hr', type=str, default='sx_paper',
+parser.add_argument('--dir_hr', type=str, default='sx',
                     help='like this: dir_data_root/dir_hr.')
 parser.add_argument('--save_dir_suffix', type=str, default='syn',
                     help='save test result as: result-(save_dir_suffix)/, such as result-syn/')
@@ -55,7 +55,7 @@ parser.add_argument('--scale', type=int, default=2,
                     help='super resolution scale')
 parser.add_argument('--patch_size', type=int, default=96,
                     help='input patch size')
-parser.add_argument('--save', type=str, default='ESRT_paper',
+parser.add_argument('--save', type=str, default='alpha6',
                     help='dir name to save, i.e. generate this dir: ../experiment/(save)/')
 parser.add_argument('--save_models', type=bool, default=True,
                     help='save all intermediate models')
