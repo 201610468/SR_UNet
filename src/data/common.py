@@ -2,7 +2,7 @@ import random
 import numpy as np
 import torch
 
-def get_patch(*args, patch_size=48, scale=2):
+def get_patch(*args, patch_size=96, scale=2):
     ih, iw = args[0].shape[:2]
 
     ip = patch_size
@@ -52,4 +52,3 @@ def normal(lr, hr):
     hr = (hr - mi) / (ma - mi)
 
     return [lr, hr], [ma, mi]
-

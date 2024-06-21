@@ -104,4 +104,3 @@ class SRData(data.Dataset):
         arr = np.arange(l)
         np.random.shuffle(arr)
         return arr
-

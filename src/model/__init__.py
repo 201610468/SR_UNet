@@ -3,12 +3,13 @@ from importlib import import_module
 import torch
 import torch.nn as nn
 import torch.nn.parallel as P
+from torchsummary import summary
 
 class Model(nn.Module):
     def __init__(self, args, ckp):
         super(Model, self).__init__()
         print('Making model...')
-
+        
         self.scale = args.scale
         self.cpu = args.cpu
         self.device = torch.device('cpu' if args.cpu else 'cuda')
@@ -17,7 +18,6 @@ class Model(nn.Module):
 
         module = import_module('model.' + args.model.lower())
         self.model = module.make_model(args).to(self.device)
-
         self.load(
             ckp.get_path('model'),
             pre_train=args.pre_train,
@@ -25,6 +25,7 @@ class Model(nn.Module):
             cpu=args.cpu
         )
         print(self.model, file=ckp.log_file)
+        summary(self.model,(1,128,128))
 
     def forward(self, x):
         if self.training: # is True when .tain(), is False when .eval()

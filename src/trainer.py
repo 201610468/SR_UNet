@@ -135,4 +135,3 @@ class Trainer():
     def terminate(self):
         epoch = self.optimizer.get_last_epoch() + 1
         return epoch >= self.args.epochs
-
